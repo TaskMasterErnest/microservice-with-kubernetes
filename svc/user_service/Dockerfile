@@ -8,7 +8,7 @@ COPY ./service service
 COPY ./go.mod go.mod
 
 # Fetch dependencies
-RUN go mod download && \
+RUN go get && \
     CGO_ENABLED=0 GOOS=linux go build -o /link_service -a -tags netgo -ldflags '-s -w' .
 
 FROM scratch
