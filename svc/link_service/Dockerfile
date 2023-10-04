@@ -4,6 +4,9 @@ WORKDIR $GOROOT/src/github.com/TaskMasterErnest/microservice-with-kubernetes/svc
 # Copy files
 COPY ./main.go main.go
 COPY ./service service
+# Copy files
+COPY ../../go.mod go.mod
+COPY ../../go.sum go.sum
 
 # Fetch dependencies
 RUN go mod download && \
