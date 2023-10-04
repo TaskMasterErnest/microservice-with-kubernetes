@@ -2,8 +2,8 @@ FROM golang:1.19 AS builder
 ADD ./main.go main.go
 ADD ./service service
 # Fetch dependencies
-RUN export GO111MODULE=on && \
-    go mod tidy 
+RUN go mod init link_service && \
+    go get 
 
 # Build image as a truly static Go binary
 RUN CGO_ENABLED=0 GOOS=linux go build -o /link_service -a -tags netgo -ldflags '-s -w' .
