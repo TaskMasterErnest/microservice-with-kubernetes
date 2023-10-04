@@ -3,7 +3,7 @@ ADD ./main.go main.go
 ADD ./service service
 # Fetch dependencies
 RUN export GO111MODULE=on && \
-    go get -dv -m
+  go mod tidy
 
 # Build image as a truly static Go binary
 RUN CGO_ENABLED=0 GOOS=linux go build -o /user_service -a -tags netgo -ldflags '-s -w' .
