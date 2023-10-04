@@ -7,7 +7,7 @@ jobs:
     - image: circleci/postgres:13.5-postgis
       environment: # environment variables for primary container
         POSTGRES_HOST_AUTH_METHOD: trust
-    working_directory: ~/TaskMasterErnest/microservice-with-kubernetes
+    working_directory: ~/go/src/github.com/TaskMasterErnest/microservice-with-kubernetes
     steps:
     - checkout
     - run:
