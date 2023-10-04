@@ -9,7 +9,7 @@ RUN go mod init link_service
 # Fetch dependencies
 RUN go get
 
-RUN CGO_ENABLED=0 GOOS=linux go build -o /link_service
+RUN CGO_ENABLED=0 GOOS=linux go build -o /link_service -a -tags netgo -ldflags '-s -w' .
 
 EXPOSE 8080
 ENTRYPOINT ["/link_service"]
