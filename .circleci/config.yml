@@ -6,8 +6,8 @@ jobs:
     - image: cimg/go:1.17
     - image: circleci/postgres:13.5-postgis
       environment: # environment variables for primary container
-        POSTGRES_USER: postgres
-    working_directory: /go/src/github.com/TaskMasterErnest/microservice-with-kubernetes
+        POSTGRES_HOST_AUTH_METHOD: trust
+    working_directory: ~/TaskMasterErnest/microservice-with-kubernetes
     steps:
     - checkout
     - run:
