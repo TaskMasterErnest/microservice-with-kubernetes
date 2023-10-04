@@ -1,5 +1,6 @@
 version: 2
 jobs:
+  # pull from repo and build using Docker images
   build:
     docker:
     - image: cimg/go:1.17
