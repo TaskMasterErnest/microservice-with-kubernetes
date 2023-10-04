@@ -3,11 +3,10 @@ package service
 import (
 	"context"
 	"encoding/json"
+	"github.com/go-kit/kit/endpoint"
+	om "github.com/the-gigi/delinkcious/pkg/object_model"
 	"net/http"
 	"time"
-
-	om "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/object_model"
-	"github.com/go-kit/kit/endpoint"
 )
 
 type link struct {

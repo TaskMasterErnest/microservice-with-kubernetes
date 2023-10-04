@@ -1,14 +1,11 @@
-FROM golang:1.19 AS builder
+FROM golang:1.11 AS builder
 ADD ./main.go main.go
 ADD ./service service
-# Copy the go.mod and go.sum files
-COPY ./go.mod .
-COPY ./go.sum .
-
 # Fetch dependencies
-RUN export GO111MODULE=on && \
-    go mod download && \
-    CGO_ENABLED=0 GOOS=linux go build -o /link_service -a -tags netgo -ldflags '-s -w' .
+RUN go get -d -v
+
+# Build image as a truly static Go binary
+RUN CGO_ENABLED=0 GOOS=linux go build -o /social_graph_service -a -tags netgo -ldflags '-s -w' .
 
 FROM scratch
 COPY --from=builder /social_graph_service /app/social_graph_service
