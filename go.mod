@@ -1,4 +1,4 @@
-module github.com/the-gigi/delinkcious
+module github.com/TaskMasterErnest/microservice-with-kubernetes
 
 go 1.20
 
