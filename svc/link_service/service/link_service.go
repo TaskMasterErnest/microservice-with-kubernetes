@@ -1,14 +1,15 @@
 package service
 
 import (
-	"github.com/gorilla/mux"
-	"github.com/the-gigi/delinkcious/pkg/db_util"
 	"log"
 	"net/http"
 
+	"github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/db_util"
+	"github.com/gorilla/mux"
+
+	lm "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/link_manager"
+	sgm "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/social_graph_client"
 	httptransport "github.com/go-kit/kit/transport/http"
-	lm "github.com/the-gigi/delinkcious/pkg/link_manager"
-	sgm "github.com/the-gigi/delinkcious/pkg/social_graph_client"
 )
 
 func Run() {

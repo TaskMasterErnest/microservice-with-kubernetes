@@ -1,13 +1,12 @@
-FROM golang:1.19 AS builder
-ADD ./main.go main.go
-ADD ./service service
-# Copy the go.mod and go.sum files
-COPY ./go.mod .
-COPY ./go.sum .
+FROM golang:alpine AS builder
+
+WORKDIR $GOROOT/src/github.com/TaskMasterErnest/microservice-with-kubernetes/svc/link_service
+COPY ./main.go main.go
+COPY ./service service
 
 # Fetch dependencies
-RUN export GO111MODULE=on && \
-    go mod download && \
+RUN go mod init link_service && \
+    go get && \
     CGO_ENABLED=0 GOOS=linux go build -o /link_service -a -tags netgo -ldflags '-s -w' .
 
 FROM scratch
