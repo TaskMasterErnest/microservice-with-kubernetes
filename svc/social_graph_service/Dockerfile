@@ -6,9 +6,8 @@ COPY ./main.go main.go
 COPY ./service service
 
 # Fetch dependencies
-RUN go mod init social_graph_service && \
-  go get && \
-  CGO_ENABLED=0 GOOS=linux go build -o /social_graph_service -a -tags netgo -ldflags '-s -w' .
+RUN go mod download && \
+    CGO_ENABLED=0 GOOS=linux go build -o /link_service -a -tags netgo -ldflags '-s -w' .
 
 FROM scratch
 COPY --from=builder /social_graph_service /app/social_graph_service
