@@ -1,5 +1,19 @@
-# microservice-with-kubernetes
-A repo containing code regarding my experience with planning, developing and operating large-scale cloud-native systems using using microservice-based architecture on Kubernetes.
+# Delinkcious
 
-I will be doing most of the testing with KinD on my local machine. And then for production, I will switch to using Kubernetes on AWS with EKS or when the documentation ofmy walkthrough demands it.
+A delicious-like link management platform implemented using Go microservices
+
+
+# Directory Structure
+
+## pkg
+The core logic is implemented by libraries in this directory
+
+## svc
+
+The microservices are in this directory. They use the excellent [gokit](https://gokit.io) microservice framework.
+
+
+## cmd
+
+Various utilities and one-time commands live here
 
