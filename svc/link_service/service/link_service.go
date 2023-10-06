@@ -8,8 +8,8 @@ import (
 	"strconv"
 
 	"github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/db_util"
+	om "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/object_model"
 	"github.com/gorilla/mux"
-	om "github.com/the-gigi/delinkcious/pkg/object_model"
 
 	lm "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/link_manager"
 	sgm "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/social_graph_client"
