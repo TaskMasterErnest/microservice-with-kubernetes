@@ -2,14 +2,13 @@ package main
 
 import (
 	"context"
+	_ "github.com/lib/pq"
+	"github.com/the-gigi/delinkcious/pkg/db_util"
+	om "github.com/the-gigi/delinkcious/pkg/object_model"
+	"github.com/the-gigi/delinkcious/pkg/user_client"
 	"log"
 	"os"
 	"os/exec"
-
-	"github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/db_util"
-	om "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/object_model"
-	"github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/user_client"
-	_ "github.com/lib/pq"
 )
 
 func check(err error) {

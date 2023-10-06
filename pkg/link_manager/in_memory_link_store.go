@@ -3,10 +3,9 @@ package link_manager
 import (
 	"errors"
 	"fmt"
+	om "github.com/the-gigi/delinkcious/pkg/object_model"
 	"regexp"
 	"time"
-
-	om "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/object_model"
 )
 
 // User links are a map of url:TaggedLink

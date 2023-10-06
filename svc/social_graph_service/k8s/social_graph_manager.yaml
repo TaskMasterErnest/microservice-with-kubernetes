@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: social-graph-manager
-        image: ernestklu/delinkcious-social-graph:0.2
+        image: g1g1/delinkcious-social-graph:0.3
         imagePullPolicy: Always
         ports:
         - containerPort: 9090

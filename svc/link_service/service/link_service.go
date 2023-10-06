@@ -2,18 +2,16 @@ package service
 
 import (
 	"fmt"
+	httptransport "github.com/go-kit/kit/transport/http"
+	"github.com/gorilla/mux"
+	"github.com/the-gigi/delinkcious/pkg/db_util"
+	lm "github.com/the-gigi/delinkcious/pkg/link_manager"
+	om "github.com/the-gigi/delinkcious/pkg/object_model"
+	sgm "github.com/the-gigi/delinkcious/pkg/social_graph_client"
 	"log"
 	"net/http"
 	"os"
 	"strconv"
-
-	"github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/db_util"
-	om "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/object_model"
-	"github.com/gorilla/mux"
-
-	lm "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/link_manager"
-	sgm "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/social_graph_client"
-	httptransport "github.com/go-kit/kit/transport/http"
 )
 
 type EventSink struct {

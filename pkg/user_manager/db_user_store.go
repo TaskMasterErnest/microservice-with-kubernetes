@@ -2,13 +2,12 @@ package user_manager
 
 import (
 	"database/sql"
+	sq "github.com/Masterminds/squirrel"
+	_ "github.com/lib/pq"
+	"github.com/the-gigi/delinkcious/pkg/db_util"
+	om "github.com/the-gigi/delinkcious/pkg/object_model"
 	"math/rand"
 	"strconv"
-
-	sq "github.com/Masterminds/squirrel"
-	"github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/db_util"
-	om "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/object_model"
-	_ "github.com/lib/pq"
 )
 
 type DbUserStore struct {

@@ -1,9 +1,9 @@
 package link_manager
 
 import (
-	om "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/object_model"
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
+	om "github.com/the-gigi/delinkcious/pkg/object_model"
 )
 
 var _ = Describe("In-memory link manager tests", func() {

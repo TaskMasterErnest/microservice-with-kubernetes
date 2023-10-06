@@ -4,11 +4,10 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"github.com/go-kit/kit/endpoint"
 	"net/http"
 
-	"github.com/go-kit/kit/endpoint"
-
-	om "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/object_model"
+	om "github.com/the-gigi/delinkcious/pkg/object_model"
 )
 
 type SimpleResponse struct {

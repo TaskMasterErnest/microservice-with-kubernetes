@@ -19,8 +19,7 @@ spec:
     spec:
       containers:
       - name: postgres
-        image: postgres:11.21-alpine3.17
-        imagePullPolicy: IfNotPresent
+        image: postgres:11.1-alpine
         ports:
         - containerPort: 5432
         env:

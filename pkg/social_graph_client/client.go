@@ -4,15 +4,14 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	httptransport "github.com/go-kit/kit/transport/http"
+	"github.com/the-gigi/delinkcious/pkg/auth_util"
+	om "github.com/the-gigi/delinkcious/pkg/object_model"
 	"io/ioutil"
 	"net/http"
 	"net/url"
 	"os"
 	"strings"
-
-	"github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/auth_util"
-	om "github.com/TaskMasterErnest/microservice-with-kubernetes/pkg/object_model"
-	httptransport "github.com/go-kit/kit/transport/http"
 )
 
 const SERVICE_NAME = "social-graph-manager"
