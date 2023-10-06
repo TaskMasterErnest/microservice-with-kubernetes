@@ -10,7 +10,6 @@ require (
 	github.com/onsi/gomega v1.4.2
 )
 
-require github.com/gorilla/mux v1.8.0 // indirect
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect

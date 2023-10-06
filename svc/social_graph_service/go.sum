@@ -1,7 +1,7 @@
 github.com/Masterminds/squirrel v0.0.0-20181030160206-3ba160b0147f h1:8JBQSKzsc40IAP5tAKEq3mwtINgeJnzN9CmS5nn4wTM=
 github.com/Masterminds/squirrel v0.0.0-20181030160206-3ba160b0147f/go.mod h1:xnKTFzjGUiZtiOagBsfnvomW+nJg2usB1ZpordQWqNM=
-github.com/TaskMasterErnest/microservice-with-kubernetes v0.0.0-20231004121545-66698569ab34 h1:65FQHlTn0h3YnY2ureytiYgKlGSn5VnnY2lLMwKkjm0=
-github.com/TaskMasterErnest/microservice-with-kubernetes v0.0.0-20231004121545-66698569ab34/go.mod h1:StNgcl6fDAKU6XvutkWUIqFYh3pVNCk4a25CKvlUXZ0=
+github.com/TaskMasterErnest/microservice-with-kubernetes v0.0.0-20231006153259-048dd66253af h1:t/YLcsr/zM8X4gVLFjKvofcrzrLVpBBn5/O5eLf8zB0=
+github.com/TaskMasterErnest/microservice-with-kubernetes v0.0.0-20231006153259-048dd66253af/go.mod h1:kd35hSmjrCPeEFnoYAHW7McWgODaVGi3wXTTZKCfIBo=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/go-kit/kit v0.13.0 h1:OoneCcHKHQ03LfBpoQCUfCluwd2Vt3ohz+kvbJneZAU=
 github.com/go-kit/kit v0.13.0/go.mod h1:phqEHMMUbyrCFCTgH48JueqrM3md2HcAZ8N3XE4FKDg=
@@ -28,6 +28,9 @@ golang.org/x/net v0.0.0-20211216030914-fe4d6282115f h1:hEYJvxw1lSnWIl8X9ofsYMklz
 golang.org/x/sys v0.0.0-20220823224334-20c2bfdbfe24 h1:TyKJRhyo17yWxOMCTHKWrc5rddHORMlnZ/j57umaUd8=
 golang.org/x/text v0.3.7 h1:olpwvP2KacW1ZWvsR7uQhoyTYvKAupfQrRGBFM352Gk=
 google.golang.org/appengine v1.3.0 h1:FBSsiFRMz3LBeXIomRnVzrQwSDj4ibvcRexLG0LZGQk=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405 h1:yhCVgyC4o1eVCa2tZl7eS0r+SDo693bJlVdllGtEeKM=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
 gopkg.in/fsnotify.v1 v1.4.7 h1:xOHLXZwVvI9hhs+cLKq5+I5onOuwQLhQwiu63xxlHs4=
 gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 h1:uRGJdciOHaEIrze2W8Q3AKkepLTh2hOroT7a+7czfdQ=
 gopkg.in/yaml.v2 v2.2.1 h1:mUhvW9EsL+naU5Q3cakzfE91YhliOondGd6ZrsDBHQE=
+gopkg.in/yaml.v2 v2.2.1/go.mod h1:hI93XBmqTisBFMUTm0b8Fm+jr3Dg1NNxqwp+5A1VGuI=
