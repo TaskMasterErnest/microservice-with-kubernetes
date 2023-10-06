@@ -12,5 +12,5 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o /social_graph_service -a -tags netgo -l
 
 FROM scratch
 COPY --from=builder /social_graph_service /app/social_graph_service
-EXPOSE 7070
+EXPOSE 9090
 ENTRYPOINT ["/app/social_graph_service"]
