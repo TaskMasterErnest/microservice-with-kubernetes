@@ -1,4 +1,4 @@
-FROM golang:1.17 AS builder
+FROM golang:1.20 AS builder
 
 WORKDIR $GOROOT/src/github.com/TaskMasterErnest/microservice-with-kubernetes/svc/user_service
 # Copy files
