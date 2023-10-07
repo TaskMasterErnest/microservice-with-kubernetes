@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-    - image: cimg/go:1.17
+    - image: cimg/go:1.20
     - image: circleci/postgres:13.5-postgis
       environment: # environment variables for primary container
         POSTGRES_HOST_AUTH_METHOD: trust
