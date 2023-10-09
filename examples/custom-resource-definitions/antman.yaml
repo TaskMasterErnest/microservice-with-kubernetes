@@ -1,0 +1,8 @@
+# apply the resource with kubectl create --validate=false -f antman.yaml
+apiVersion: "ernestklu.org/v1"
+kind: SuperHero
+metadata:
+  name: antman
+spec: 
+  superpower: "can change size"
+  size: "originally human-sized"

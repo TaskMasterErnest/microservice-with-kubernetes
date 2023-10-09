@@ -1,0 +1,9 @@
+# apply the resource with kubectl create --validate=false -f ironman.yaml
+apiVersion: "ernestklu.org/v1"
+kind: SuperHero
+metadata:
+  name: iron-man
+spec: 
+  superpower: "can invent"
+  size: "human-sized"
+  quirk: "AI-controlled armoured suit"

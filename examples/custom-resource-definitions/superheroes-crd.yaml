@@ -1,0 +1,38 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  # name must match spec fields below, and in the form: <plural>.<group_name>
+  name: superheroes.ernestklu.org
+spec:
+  # group name to use for the REST API: /apis/<group>/<version>
+  group: ernestklu.org
+  # list the versions supported by this CustomResourceDefinition
+  versions:
+  - name: v1 
+    # each version can be enabled/disabled by the Served flag
+    served: true
+    # only one version must be marked as the storage version
+    storage: true 
+    # Add the new OpenAPI v3 schema
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          superpower:
+            type: string
+          size:
+            type: string
+          quirk: 
+            type: string
+  # the scope must be either Namespaced or Cluster
+  scope: Cluster
+  names: 
+    # plural name to be used in the URL: /apis/<groups>/<version>/<plural>
+    plural: superheroes 
+    # singular name to be used as an alias on the CLI and for display
+    singular: superhero 
+    # kind is the CamelCased singular type. The reource manifests use this
+    kind: SuperHero 
+    # shortNames allow for shorter strings to match the resource on the CLI
+    shortNames:
+      - hr
