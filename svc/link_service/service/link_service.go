@@ -75,6 +75,7 @@ func Run() {
 	natsHostname := os.Getenv("NATS_CLUSTER_SERVICE_HOST")
 	natsPort := os.Getenv("NATS_CLUSTER_SERVICE_PORT")
 
+	natsUrl := ""
 	var eventSink om.LinkManagerEvents
 	if natsHostname != "" {
 		natsUrl := natsHostname + ":" + natsPort
@@ -86,8 +87,8 @@ func Run() {
 		eventSink = &EventSink{}
 	}
 
-	// Fix: Change the first argument to `link_manager.LinkStore`
-	svc, err := lm.NewLinkManager(store, socialGraphClient, eventSink, maxLinksPerUser)
+	// Fix: Remove the fifth argument
+	svc, err := lm.NewLinkManager(store, socialGraphClient, natsUrl, eventSink, maxLinksPerUser)
 	if err != nil {
 		log.Fatal(err)
 	}
