@@ -1,4 +1,4 @@
-module github.com/TaskMasterErnest/microservice-with-kubernetes
+module github.com/TaskMasterErnest/microservice-with-kubernetes/svc/news_service
 
 go 1.20
 
