@@ -1,8 +1,9 @@
 package link_manager_events
 
 import (
-	"github.com/nats-io/go-nats"
 	"log"
+
+	"github.com/nats-io/nats.go"
 
 	om "github.com/the-gigi/delinkcious/pkg/object_model"
 )

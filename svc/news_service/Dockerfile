@@ -1,14 +1,16 @@
-FROM golang:1.11 AS builder
-ADD ./main.go main.go
-ADD ./service service
-# Fetch dependencies
-RUN go get -d -v
+FROM golang:1.20-alpine AS builder
 
-# Build image as a truly static Go binary
-RUN CGO_ENABLED=0 GOOS=linux go build -o /news_service -a -tags netgo -ldflags '-s -w' .
+WORKDIR $GOROOT/src/github.com/TaskMasterErnest/microservice-with-kubernetes/svc/news_service
+# Copy files
+COPY ./main.go main.go
+COPY ./service service
+COPY go.mod go.mod
+COPY go.sum go.sum
+
+# Fetch dependencies
+RUN CGO_ENABLED=0 GOOS=linux go build -o /link_service -a -tags netgo -ldflags '-s -w' .
 
 FROM scratch
-MAINTAINER Gigi Sayfan <the.gigi@gmail.com>
 COPY --from=builder /news_service /app/news_service
 EXPOSE 7070
 ENTRYPOINT ["/app/news_service"]
