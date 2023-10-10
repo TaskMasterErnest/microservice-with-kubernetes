@@ -3,6 +3,7 @@ go 1.20
 use (
 	.
 	./svc/link_service
+	./svc/news_service
 	./svc/social_graph_service
 	./svc/user_service
 )
