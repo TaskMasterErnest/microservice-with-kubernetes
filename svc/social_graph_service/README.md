@@ -1,6 +1,6 @@
 # Social Graph Service
 
-The social graph microservice. It uses a multi-stage [Dockerfile](Dockerfile) to generate a lean and mean image from SCRATCH that just includes the Go binary. The system has a CI/CD pipeline, but you also
+The social graph microservice. It uses a multi-stage [Dockerfile](Dockerfile) to generate a lean and mean image from SCRATCH that just includes the Go binary. The system has a CI/CD pipeline, but you can also build and deploy it yourself.
 
 
 ## Build Docker image
@@ -25,7 +25,7 @@ $ docker push g1g1/delinkcious-social-graph:${VERSION}
 
 ## Deploy to active Kubernetes cluster
 
-If you want to push a local minikube make sure your kuectl is pointed to the right cluster and type:
+If you want to push a local minikube make sure your kubectl is pointed to the right cluster and type:
 
 ```
 $ kubectl apply -f k8s
