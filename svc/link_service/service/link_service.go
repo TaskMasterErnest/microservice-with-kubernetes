@@ -2,6 +2,11 @@ package service
 
 import (
 	"fmt"
+	"log"
+	"net/http"
+	"os"
+	"strconv"
+
 	httptransport "github.com/go-kit/kit/transport/http"
 	"github.com/gorilla/mux"
 	"github.com/the-gigi/delinkcious/pkg/db_util"
@@ -9,10 +14,6 @@ import (
 	nats "github.com/the-gigi/delinkcious/pkg/link_manager_events"
 	om "github.com/the-gigi/delinkcious/pkg/object_model"
 	sgm "github.com/the-gigi/delinkcious/pkg/social_graph_client"
-	"log"
-	"net/http"
-	"os"
-	"strconv"
 )
 
 type EventSink struct {
