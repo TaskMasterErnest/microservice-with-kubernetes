@@ -86,6 +86,7 @@ func Run() {
 		eventSink = &EventSink{}
 	}
 
+	// Fix: Change the first argument to `link_manager.LinkStore`
 	svc, err := lm.NewLinkManager(store, socialGraphClient, eventSink, maxLinksPerUser)
 	if err != nil {
 		log.Fatal(err)
