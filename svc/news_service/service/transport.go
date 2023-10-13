@@ -2,7 +2,6 @@ package service
 
 import (
 	"context"
-
 	"github.com/go-kit/kit/endpoint"
 	grpctransport "github.com/go-kit/kit/transport/grpc"
 	"github.com/golang/protobuf/ptypes/timestamp"

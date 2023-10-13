@@ -2,11 +2,6 @@ package service
 
 import (
 	"fmt"
-	"log"
-	"net/http"
-	"os"
-	"strconv"
-
 	httptransport "github.com/go-kit/kit/transport/http"
 	"github.com/gorilla/mux"
 	"github.com/the-gigi/delinkcious/pkg/db_util"
@@ -14,6 +9,10 @@ import (
 	nats "github.com/the-gigi/delinkcious/pkg/link_manager_events"
 	om "github.com/the-gigi/delinkcious/pkg/object_model"
 	sgm "github.com/the-gigi/delinkcious/pkg/social_graph_client"
+	"log"
+	"net/http"
+	"os"
+	"strconv"
 )
 
 type EventSink struct {
@@ -75,7 +74,6 @@ func Run() {
 	natsHostname := os.Getenv("NATS_CLUSTER_SERVICE_HOST")
 	natsPort := os.Getenv("NATS_CLUSTER_SERVICE_PORT")
 
-	natsUrl := ""
 	var eventSink om.LinkManagerEvents
 	if natsHostname != "" {
 		natsUrl := natsHostname + ":" + natsPort
@@ -87,8 +85,7 @@ func Run() {
 		eventSink = &EventSink{}
 	}
 
-	// Fix: Remove the fifth argument
-	svc, err := lm.NewLinkManager(store, socialGraphClient, natsUrl, eventSink, maxLinksPerUser)
+	svc, err := lm.NewLinkManager(store, socialGraphClient, eventSink, maxLinksPerUser)
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -4,13 +4,12 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
-	"net/http"
-	"os"
-	"strings"
-
 	"github.com/go-kit/kit/endpoint"
 	"github.com/the-gigi/delinkcious/pkg/auth_util"
 	om "github.com/the-gigi/delinkcious/pkg/object_model"
+	"net/http"
+	"os"
+	"strings"
 )
 
 type followRequest struct {

@@ -1,36 +1,37 @@
 module github.com/the-gigi/delinkcious
 
-go 1.20
-
 require (
+	github.com/BurntSushi/toml v0.3.1 // indirect
 	github.com/Masterminds/squirrel v0.0.0-20181030160206-3ba160b0147f
-	github.com/go-kit/kit v0.13.0
-	github.com/golang/protobuf v1.5.2
-	github.com/lib/pq v1.0.0
-	github.com/nats-io/nats.go v1.15.0
-	github.com/onsi/ginkgo v1.6.0
-	github.com/onsi/gomega v1.4.2
-	golang.org/x/net v0.0.0-20211216030914-fe4d6282115f
-	google.golang.org/grpc v1.40.0
-	gopkg.in/yaml.v2 v2.2.3
-)
-
-require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
-	github.com/go-kit/log v0.2.0 // indirect
-	github.com/go-logfmt/logfmt v0.5.1 // indirect
+	github.com/go-kit/kit v0.8.0
+	github.com/go-logfmt/logfmt v0.4.0 // indirect
+	github.com/go-redis/redis v6.15.2+incompatible
 	github.com/go-sql-driver/mysql v1.4.1 // indirect
-	github.com/hpcloud/tail v1.0.0 // indirect
+	github.com/go-stack/stack v1.8.0 // indirect
+	github.com/golang/protobuf v1.2.0
+	github.com/gorilla/mux v1.7.0
+	github.com/kr/pretty v0.1.0 // indirect
 	github.com/lann/builder v0.0.0-20180802200727-47ae307949d0 // indirect
 	github.com/lann/ps v0.0.0-20150810152359-62de8c46ede0 // indirect
+	github.com/lib/pq v1.0.0
 	github.com/mattn/go-sqlite3 v1.10.0 // indirect
-	github.com/nats-io/nkeys v0.3.0 // indirect
-	github.com/nats-io/nuid v1.0.1 // indirect
-	golang.org/x/crypto v0.0.0-20220315160706-3147a52a75dd // indirect
-	golang.org/x/sys v0.0.0-20220823224334-20c2bfdbfe24 // indirect
-	golang.org/x/text v0.3.7 // indirect
-	google.golang.org/genproto v0.0.0-20210917145530-b395a37504d4 // indirect
-	google.golang.org/protobuf v1.27.1 // indirect
-	gopkg.in/fsnotify.v1 v1.4.7 // indirect
-	gopkg.in/tomb.v1 v1.0.0-20141024135613-dd632973f1e7 // indirect
+	github.com/nats-io/gnatsd v1.4.1 // indirect
+	github.com/nats-io/go-nats v1.7.2
+	github.com/nats-io/nkeys v0.0.2 // indirect
+	github.com/nats-io/nuid v1.0.0 // indirect
+	github.com/onsi/ginkgo v1.7.0
+	github.com/onsi/gomega v1.4.3
+	github.com/pelletier/go-toml v1.2.0
+	github.com/stretchr/testify v1.3.0 // indirect
+	golang.org/x/crypto v0.0.0-20190225124518-7f87c0fbb88b // indirect
+	golang.org/x/net v0.0.0-20190225153610-fe579d43d832
+	golang.org/x/sync v0.0.0-20181221193216-37e7f081c4d4 // indirect
+	golang.org/x/sys v0.0.0-20190225065934-cc5685c2db12 // indirect
+	golang.org/x/text v0.3.1-0.20180807135948-17ff2d5776d2 // indirect
+	google.golang.org/appengine v1.4.0 // indirect
+	google.golang.org/genproto v0.0.0-20190219182410-082222b4a5c5 // indirect
+	google.golang.org/grpc v1.18.0
+	gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127 // indirect
+	gopkg.in/yaml.v2 v2.2.2
 )
