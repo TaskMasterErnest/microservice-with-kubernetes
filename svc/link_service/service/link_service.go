@@ -11,7 +11,7 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/the-gigi/delinkcious/pkg/db_util"
 	lm "github.com/the-gigi/delinkcious/pkg/link_manager"
-	nats "github.com/the-gigi/delinkcious/pkg/link_manager_events"
+	"github.com/the-gigi/delinkcious/pkg/link_manager_events"
 	om "github.com/the-gigi/delinkcious/pkg/object_model"
 	sgm "github.com/the-gigi/delinkcious/pkg/social_graph_client"
 )
@@ -75,10 +75,11 @@ func Run() {
 	natsHostname := os.Getenv("NATS_CLUSTER_SERVICE_HOST")
 	natsPort := os.Getenv("NATS_CLUSTER_SERVICE_PORT")
 
+	natsUrl := ""
 	var eventSink om.LinkManagerEvents
 	if natsHostname != "" {
 		natsUrl := natsHostname + ":" + natsPort
-		eventSink, err = nats.NewEventSender(natsUrl)
+		eventSink, err = link_manager_events.NewEventSender(natsUrl)
 		if err != nil {
 			log.Fatal(err)
 		}
@@ -87,7 +88,7 @@ func Run() {
 	}
 
 	// Fix: Change the first argument to `link_manager.LinkStore`
-	svc, err := lm.NewLinkManager(store, socialGraphClient, eventSink, maxLinksPerUser)
+	svc, err := lm.NewLinkManager(store, socialGraphClient, natsUrl, eventSink, maxLinksPerUser)
 	if err != nil {
 		log.Fatal(err)
 	}
