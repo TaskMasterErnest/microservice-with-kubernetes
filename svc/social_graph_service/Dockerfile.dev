@@ -10,7 +10,5 @@ COPY go.sum go.sum
 # Fetch dependencies
 RUN CGO_ENABLED=0 GOOS=linux go build -o /social_graph_service -a -tags netgo -ldflags '-s -w' .
 
-FROM scratch
-COPY --from=builder /social_graph_service /app/social_graph_service
-EXPOSE 7070
-ENTRYPOINT ["/app/social_graph_service"]
+EXPOSE 8080
+ENTRYPOINT ["/social_graph_service"]

@@ -2,18 +2,18 @@ package service
 
 import (
 	"fmt"
-	"log"
-	"net/http"
-	"os"
-	"strconv"
-
 	httptransport "github.com/go-kit/kit/transport/http"
 	"github.com/gorilla/mux"
 	"github.com/the-gigi/delinkcious/pkg/db_util"
 	lm "github.com/the-gigi/delinkcious/pkg/link_manager"
 	"github.com/the-gigi/delinkcious/pkg/link_manager_events"
+
 	om "github.com/the-gigi/delinkcious/pkg/object_model"
 	sgm "github.com/the-gigi/delinkcious/pkg/social_graph_client"
+	"log"
+	"net/http"
+	"os"
+	"strconv"
 )
 
 type EventSink struct {
@@ -32,11 +32,10 @@ func (s *EventSink) OnLinkDeleted(username string, url string) {
 }
 
 func Run() {
-	dbHost, dbPort, err := db_util.GetDbEndpoint("social_graph")
+	dbHost, dbPort, err := db_util.GetDbEndpoint("link")
 	if err != nil {
 		log.Fatal(err)
 	}
-
 	store, err := lm.NewDbLinkStore(dbHost, dbPort, "postgres", "postgres")
 	if err != nil {
 		log.Fatal(err)
@@ -78,7 +77,7 @@ func Run() {
 	natsUrl := ""
 	var eventSink om.LinkManagerEvents
 	if natsHostname != "" {
-		natsUrl := natsHostname + ":" + natsPort
+		natsUrl = natsHostname + ":" + natsPort
 		eventSink, err = link_manager_events.NewEventSender(natsUrl)
 		if err != nil {
 			log.Fatal(err)
@@ -87,7 +86,6 @@ func Run() {
 		eventSink = &EventSink{}
 	}
 
-	// Fix: Change the first argument to `link_manager.LinkStore`
 	svc, err := lm.NewLinkManager(store, socialGraphClient, natsUrl, eventSink, maxLinksPerUser)
 	if err != nil {
 		log.Fatal(err)

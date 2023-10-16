@@ -13,6 +13,7 @@ type link struct {
 	Url         string
 	Title       string
 	Description string
+	Status      string
 	Tags        map[string]bool
 	CreatedAt   string
 	UpdatedAt   string
@@ -23,6 +24,7 @@ func newLink(source om.Link) link {
 		Url:         source.Url,
 		Title:       source.Title,
 		Description: source.Description,
+		Status:      source.Status,
 		Tags:        source.Tags,
 		CreatedAt:   source.CreatedAt.Format(time.RFC3339),
 		UpdatedAt:   source.UpdatedAt.Format(time.RFC3339),
@@ -95,6 +97,7 @@ func makeGetLinksEndpoint(svc om.LinkManager) endpoint.Endpoint {
 		}
 		if err != nil {
 			res.Err = err.Error()
+			return res, err
 		}
 		return res, nil
 	}
@@ -107,6 +110,7 @@ func makeAddLinkEndpoint(svc om.LinkManager) endpoint.Endpoint {
 		res := SimpleResponse{}
 		if err != nil {
 			res.Err = err.Error()
+			return res, err
 		}
 		return res, nil
 	}
@@ -119,6 +123,7 @@ func makeUpdateLinkEndpoint(svc om.LinkManager) endpoint.Endpoint {
 		res := SimpleResponse{}
 		if err != nil {
 			res.Err = err.Error()
+			return res, err
 		}
 		return res, nil
 	}
@@ -131,6 +136,7 @@ func makeDeleteLinkEndpoint(svc om.LinkManager) endpoint.Endpoint {
 		res := SimpleResponse{}
 		if err != nil {
 			res.Err = err.Error()
+			return res, err
 		}
 		return res, nil
 	}

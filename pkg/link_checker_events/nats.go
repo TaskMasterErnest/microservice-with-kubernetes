@@ -1,11 +1,9 @@
-package link_manager_events
+package link_checker_events
 
-import (
-	"github.com/nats-io/nats.go"
-)
+import "github.com/nats-io/nats.go"
 
 const (
-	subject = "link-events"
+	subject = "link-check-events"
 	queue   = "the-queue"
 )
 
