@@ -8,7 +8,7 @@ COPY go.mod go.mod
 COPY go.sum go.sum
 
 # Fetch dependencies
-RUN CGO_ENABLED=0 GOOS=linux go build -o /link_service -a -tags netgo -ldflags '-s -w' .
+RUN CGO_ENABLED=0 GOOS=linux go build -o /news_service -a -tags netgo -ldflags '-s -w' .
 
 FROM scratch
 COPY --from=builder /news_service /app/news_service
